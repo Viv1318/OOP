@@ -1,7 +1,5 @@
 package Family_Tree;
 
-import java.time.LocalDate;
-
 import java.util.List;
 
 // класс описывающий человека
@@ -9,12 +7,12 @@ import java.util.List;
 public class People {
 
    private String name;
-   private LocalDate birthDate;
+   private int birthDate;
    private People mather;
    private People father;
    private List<People> children;
 
-    public People(String name, LocalDate birthDate) {
+    public People(String name, int birthDate) {
 
         this.name = name;
         this.birthDate = birthDate;
@@ -25,7 +23,7 @@ public class People {
         return name;
     }
 
-    public LocalDate getBirthDate() {
+    public int getBirthDate() {
         return birthDate;
     }
 
