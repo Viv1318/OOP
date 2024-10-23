@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 import java.util.List;
 
+// класс описывающий человека
+
 public class People {
 
    private String name;
