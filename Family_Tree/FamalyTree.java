@@ -34,10 +34,10 @@ public class FamalyTree {
 
     }
 
-    public People findPersonsByBirthDate (LocalDate birthDate){
+    public People findPersonsByBirthDate (int birthDate){
 
         for (People person: people){
-            if (person.getBirthDate().equals(birthDate)){
+            if (person.getBirthDate()==birthDate){
                 return person;
             }
         }
