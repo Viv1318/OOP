@@ -1,5 +1,6 @@
 package Family_Tree;
 
+import java.util.ArrayList;
 import java.util.List;
 
 // класс описывающий человека
@@ -16,6 +17,7 @@ public class People {
 
         this.name = name;
         this.birthDate = birthDate;
+        this.children = new ArrayList<>();
 
     }
 
