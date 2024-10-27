@@ -1,27 +1,27 @@
 package Family_Tree;
 
-import java.time.LocalDate;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class FamalyTree {
     
-    private List<People> people;
+    private static List<People> people;
 
     public FamalyTree() {
         this.people = new ArrayList<People>();
     }
 
-    public void addPerson(People person) {
+    public static void addPerson(People person) {
         people.add(person);
     }
     
-    public List<People> getChildren(People parent) {
+    public static List<People> getChildren(People parent) {
         return parent.getChildren();
         
     }
 
-    public People findPersonsByName(String name){
+    public static People findPersonsByName(String name){
 
         for(People person: people){
 
@@ -34,7 +34,7 @@ public class FamalyTree {
 
     }
 
-    public People findPersonsByBirthDate (int birthDate){
+    public static People findPersonsByBirthDate (int birthDate){
 
         for (People person: people){
             if (person.getBirthDate()==birthDate){
