@@ -1,5 +1,6 @@
 package Family_Tree;
 
+import java.io.IOException;
 import java.util.List;
 
 public class Main {
@@ -24,6 +25,33 @@ public class Main {
 
         List<People> Voronin_N_AChild = FamalyTree.getChildren(Voronin_N_A);
 
+        ReadingAndWritingFile fileOps = new FileOperationsImpl();
+
+        try{
+
+            fileOps.saveToFile(famalyTree, "famalyTree.txt");
+            System.out.println("Family Tree saved to file " );
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        FamalyTree loadedFamilyTree = null;
+
+        try {
+
+            loadedFamilyTree = fileOps.loadFromFile("famalyTree.txt");
+            System.out.println("Family Tree loaded from file ");
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
+        if (loadedFamilyTree != null){
+            for (People person: loadedFamilyTree.getPeoples()){
+                System.out.println( "Loaded person:" + person.getName() + ", born in " + person.getBirthDate());
+            }
+        }
         for ( People child: Voronin_N_AChild){
             System.out.println("Дети Воронина Н А: " + child.getName());
         }

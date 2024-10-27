@@ -1,12 +1,15 @@
 package Family_Tree;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 // класс описывающий человека
 
-public class People {
+public class People implements Serializable {
 
+    
+   private static final long serialVersionUID = 1L;
    private String name;
    private int birthDate;
    private People mather;

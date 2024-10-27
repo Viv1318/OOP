@@ -1,10 +1,12 @@
 package Family_Tree;
 
-
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FamalyTree {
+public class FamalyTree implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     
     private static List<People> people;
 
@@ -44,6 +46,8 @@ public class FamalyTree {
         return null;
     }
 
-    
+    public List<People> getPeoples() {
+        return people;
+    }
 
 }
