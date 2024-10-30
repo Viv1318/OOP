@@ -12,16 +12,34 @@ public class Main {
         People Voronin_N_A = new People ("Воронин Н.А.", 1960);
         People Voronina_L_D = new People ("Воронина Л.Д.", 1965);
         People Voronin_O_N  = new People("Воронин О Н", 1983);
+        People Voronina_Y_N = new People ("Воронина Ю.H.", 1988);
 
         Voronin_O_N.setMather(Voronina_L_D);
         Voronin_O_N.setFather(Voronin_N_A);
         Voronin_N_A.addChildren(Voronin_O_N);
         Voronina_L_D.addChildren(Voronin_O_N);
+        Voronina_Y_N.setFather(Voronina_L_D);
+        Voronina_L_D.addChildren(Voronina_Y_N);
+        Voronina_Y_N.setFather(Voronin_N_A);
+        Voronin_N_A.addChildren(Voronina_Y_N);
         
 
         FamalyTree.addPerson(Voronin_N_A);
         FamalyTree.addPerson(Voronina_L_D);
         FamalyTree.addPerson(Voronin_O_N);
+        FamalyTree.addPerson(Voronina_Y_N);
+
+        System.out.println("Сортировка по имени:");
+        famalyTree.sortByName();
+        for (People person: famalyTree){
+            System.out.println( "Person: " + person.getName() + ", born in " + person.getBirthDate());
+        }
+
+        System.out.println("\nСортировка по дате рождения:");
+        famalyTree.sortByBirthDate();
+        for (People person: famalyTree){
+            System.out.println( "Person: " + person.getName() + ", born in " + person.getBirthDate());
+        }
 
         List<People> Voronin_N_AChild = FamalyTree.getChildren(Voronin_N_A);
 
