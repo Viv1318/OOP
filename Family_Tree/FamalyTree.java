@@ -2,9 +2,11 @@ package Family_Tree;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
-public class FamalyTree implements Serializable {
+public class FamalyTree implements Serializable, Iterable <People> {
 
     private static final long serialVersionUID = 1L;
     
@@ -49,5 +51,20 @@ public class FamalyTree implements Serializable {
     public List<People> getPeoples() {
         return people;
     }
+    
+    @Override
+    public Iterator<People> iterator() {
+        return people.iterator();
+    }
+
+    public void sortByName(){
+        Collections.sort(people, (p1, p2) -> p1.getName().compareTo(p2.getName()));
+    }
+    public void sortByBirthDate(){
+
+        Collections.sort(people, (p1, p2) -> Integer.compare(p1.getBirthDate(), p2.getBirthDate()));
+    }
+
+       
 
 }
